@@ -10,7 +10,7 @@ if (isset($_POST['pseudo'], $_POST['messages'])) {
     ));
     
 
-    $req->closeCursor();
+   
 } 
 
 header('location: minichat.php');

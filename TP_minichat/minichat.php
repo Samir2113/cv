@@ -26,19 +26,24 @@
             <button type="submit">Envoyer</button>
         </p>
     </form>
-</body>
 
-</html>
 
 
 <?php
+// Connexion à la base de données
 $bdd = new PDO('mysql:host=localhost;dbname=tp;', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
+// Récupération des 10 derniers messages
+$reponse = $bdd->query('SELECT pseudo, messages FROM minichat ORDER BY Id desc limit 0, 10');
 
-$req = $bdd->query('SELECT pseudo, messages FROM minichat ORDER BY Id desc limit 0, 10');
-while($données = $req->fetch()){
-    echo "<p>".htmlspecialchars($données['pseudo'])." : ".htmlspecialchars($données['messages'])."</p>";
+// Affichage de chaque message (avec données protégées par htmlspecialchars)
+while($données = $reponse->fetch()){
+    echo "<p><strong>".htmlspecialchars($données['pseudo'])."</strong> : ".htmlspecialchars($données['messages'])."</p>";
 }
 
+$reponse->closeCursor();
 
 ?>
+
+    </body>
+</html>
