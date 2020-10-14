@@ -1,0 +1,28 @@
+body{
+    background-color: aquamarine;
+    text-align: center;
+}
+
+section{
+    width: 50%;
+    text-align: center;
+}
+
+div{
+    background-color: gray;
+    /*margin-left: 50px;*/
+    width: 50%;
+    border-radius: 20px 20px 20px 20px;
+}
+h3 {
+    text-align: center;
+    color: white;
+    background-color: black;
+    border-radius: 20px 20px 0 0;
+    /*text-align: left;*/
+}
+
+p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
